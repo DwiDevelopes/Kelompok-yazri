@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kelompok Yazri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium custom cakes, pastries and desserts crafted by London's finest bakers">
+    <meta name="keywords" content="custom cakes, wedding cakes, birthday cakes, artisanal bakery, London cakes">
+
+    <!-- Favicon -->
+    <link href="icon/icon.png" rel="icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+
+
+    <!-- Main CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        music = new Audio('music/music.mp3');
+        music.loop = true;
+        music.play();
+    </script>
+
+    <style>
+        :root {
+            --primary: #e83e8c;
+            --secondary: #6f42c1;
+            --dark: #212529;
+            --light: #f8f9fa;
+            --accent: #ffc107;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #555;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #d62f7b;
+            border-color: #d62f7b;
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .hero-section {
+            background: url('img/hero-bg.jpg') center center no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(33, 37, 41, 0.95) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .border-inner {
+            position: relative;
+            border: none !important;
+        }
+
+        .border-inner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .cake-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake-img {
+            transition: transform 0.5s ease;
+        }
+
+        .cake-card:hover .cake-img {
+            transform: scale(1.05);
+        }
+
+        .flavor-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .testimonial-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .team-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .team-social {
+            bottom: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="icon/icon.png" alt="Kelompok" height="40" class="me-2">
+                <span class="h3 mb-0">Kelompok Yazri</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Popup -->
+    <div class="hero-section py-5 position-relative"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/1\ \(1\).jpeg') no-repeat center center; background-size: cover;">
+        <div class="container py-5 my-5 position-relative z-index-1">
+            <div class="row align-items-center py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h6 class="text-white mb-3">Kegiatan PPBL</h6>
+                    <h1 class="display-3 text-white fw-bold mb-4">Melaksanakan kegiatan PPBL</h1>
+                    <p class="text-white mb-4 lead">Mengajari siswa Siswi Dalam Hidup Bersih dan Gotong Royong Bersama
+                        Dan Penanaman dan mengajari hal lainya</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 video-popup-btn"
+                            data-bs-toggle="modal" data-bs-target="#videoModal2">
+                            <i class="fas fa-play me-2"></i>Lihat Kegiatan
+                        </button>
+                        <button class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 video-popup-btn"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <i class="fas fa-play me-2"></i>Tonton Video
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="position-relative">
+                        <img src="images/1 (2).jpeg" class="img-fluid rounded-3 shadow-lg" alt="Kegiatan PPBL"
+                            style="transform: rotate(3deg);">
+                        <button
+                            class="btn btn-primary btn-video-thumbnail rounded-circle p-3 position-absolute top-50 start-50 translate-middle"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <i class="fas fa-play fs-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- Main Video Player -->
+                    <div class="ratio ratio-16x9">
+                        <iframe id="ppblVideo" src="video/2 (1).mp4" title="Video Kegiatan PPBL"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Video Slides (5 videos) -->
+                    <div class="video-slides bg-dark p-3">
+                        <h6 class="text-white mb-3">Video Lainnya:</h6>
+                        <div class="d-flex overflow-auto pb-2">
+                            <!-- Video 1 -->
+                            <div class="video-thumbnail me-3" data-video-src="video/2 (1).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 1">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+
+                            <!-- Video 2 -->
+                            <div class="video-thumbnail me-3" data-video-src="video/2 (2).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 2">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+
+                            <!-- Video 3 -->
+                            <div class="video-thumbnail me-3" data-video-src="video/2 (3).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 3">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+
+                            <!-- Video 4 -->
+                            <div class="video-thumbnail me-3" data-video-src="video/2 (4).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 4">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (5).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (6).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (7).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (8).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (9).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (10).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (11).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (12).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (13).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (14).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (15).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (16).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (17).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (18).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (19).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (20).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (21).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (22).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (23).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (24).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (25).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                            <!-- Video 5 -->
+                            <div class="video-thumbnail" data-video-src="video/2 (26).mp4">
+                                <div class="position-relative">
+                                    <img src="icon/icon.png" class="rounded" width="150" alt="Video 5">
+                                    <div class="play-icon position-absolute top-50 start-50 translate-middle">
+                                        <i class="fas fa-play text-white bg-primary rounded-circle p-2"></i>
+                                    </div>
+                                    <div
+                                        class="video-duration bg-dark text-white small px-1 rounded position-absolute bottom-0 end-0 m-1">
+                                        Live</div>
+                                </div>
+                                <p class="text-white small mt-1 mb-0">Kegiatan PPBL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .video-slides {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        .video-thumbnail {
+            cursor: pointer;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.03);
+        }
+
+        .play-icon {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .video-thumbnail:hover .play-icon {
+            opacity: 1;
+        }
+
+        .video-slides::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .video-slides::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        .video-slides::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 10px;
+        }
+    </style>
+
+    <script>
+        // Video modal functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            var videoModal = document.getElementById('videoModal');
+            var videoPlayer = document.getElementById('ppblVideo');
+            var videoThumbnails = document.querySelectorAll('.video-thumbnail');
+
+            // Main modal functionality
+            videoModal.addEventListener('show.bs.modal', function () {
+                videoPlayer.setAttribute('src', videoPlayer.getAttribute('src') + '?autoplay=1');
+            });
+
+            videoModal.addEventListener('hide.bs.modal', function () {
+                videoPlayer.setAttribute('src', '');
+            });
+
+            // Close when clicking outside video
+            videoModal.addEventListener('click', function (e) {
+                if (e.target === videoModal) {
+                    var modal = bootstrap.Modal.getInstance(videoModal);
+                    modal.hide();
+                }
+            });
+
+            // Thumbnail click functionality
+            videoThumbnails.forEach(function (thumbnail) {
+                thumbnail.addEventListener('click', function () {
+                    var newVideoSrc = this.getAttribute('data-video-src');
+                    videoPlayer.setAttribute('src', newVideoSrc + '?autoplay=1');
+
+                    // Update active thumbnail (optional)
+                    videoThumbnails.forEach(function (thumb) {
+                        thumb.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <style>
+                        .gallery {
+                            --s: 130px;
+                            /* control the size of the images*/
+                            --rotation: 0deg;
+                            /* initial rotation */
+
+                            display: grid;
+                            gap: 5px;
+                            position: relative;
+                            width: calc(var(--s) * 3);
+                            height: calc(var(--s) * 3);
+                            margin: 0 auto;
+                            touch-action: none;
+                            /* for touch devices */
+                            user-select: none;
+                            /* prevent text selection */
+                        }
+
+                        .gallery-container {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .gallery>img {
+                            width: var(--s);
+                            aspect-ratio: 1;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            margin-left: calc(var(--s) / -2);
+                            margin-top: calc(var(--s) / -2);
+                            border-radius: 50%;
+                            object-fit: cover;
+                            transform:
+                                rotate(calc(var(--i) * 360deg / 8 + var(--rotation))) translate(calc(1.5 * var(--s))) rotate(calc(var(--i) * -360deg / 8));
+                            transition: transform 0.5s ease-out;
+                            pointer-events: none;
+                            /* allow clicking through to container */
+                        }
+
+                        .gallery>img:nth-of-type(1) {
+                            --i: 0;
+                        }
+
+                        .gallery>img:nth-of-type(2) {
+                            --i: 1;
+                        }
+
+                        .gallery>img:nth-of-type(3) {
+                            --i: 2;
+                        }
+
+                        .gallery>img:nth-of-type(4) {
+                            --i: 3;
+                        }
+
+                        .gallery>img:nth-of-type(5) {
+                            --i: 4;
+                        }
+
+                        .gallery>img:nth-of-type(6) {
+                            --i: 5;
+                        }
+
+                        .gallery>img:nth-of-type(7) {
+                            --i: 6;
+                        }
+
+                        .gallery>img:nth-of-type(8) {
+                            --i: 7;
+                        }
+
+                        .center-circle {
+                            position: absolute;
+                            width: calc(var(--s) / 1.5);
+                            height: calc(var(--s) / 1.5);
+                            border-radius: 50%;
+                            background: #222;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            cursor: grab;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .center-circle:active {
+                            cursor: grabbing;
+                        }
+
+                        .center-circle::before,
+                        .center-circle::after {
+                            content: '';
+                            position: absolute;
+                            background: white;
+                        }
+
+                        .center-circle::before {
+                            width: 60%;
+                            height: 3px;
+                        }
+
+                        .center-circle::after {
+                            width: 3px;
+                            height: 60%;
+                        }
+                    </style>
+
+                    <div class="gallery" id="gallery">
+                        <div class="center-circle" id="center"></div>
+                        <img src="images/1 (1).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (2).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (3).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (4).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (5).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (6).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (7).jpeg" alt="kegiatan ppbl" loading="lazy">
+                        <img src="images/1 (8).jpeg" alt="kegiatan ppbl" loading="lazy">
+                    </div>
+
+                    <script>
+                        const gallery = document.getElementById('gallery');
+                        const center = document.getElementById('center');
+                        let isDragging = false;
+                        let startAngle = 0;
+                        let currentRotation = 0;
+
+                        function getAngle(x, y) {
+                            const rect = gallery.getBoundingClientRect();
+                            const centerX = rect.left + rect.width / 2;
+                            const centerY = rect.top + rect.height / 2;
+                            return Math.atan2(y - centerY, x - centerX) * 180 / Math.PI;
+                        }
+
+                        center.addEventListener('mousedown', (e) => {
+                            isDragging = true;
+                            startAngle = getAngle(e.clientX, e.clientY) - currentRotation;
+                            e.preventDefault();
+                        });
+
+                        window.addEventListener('mousemove', (e) => {
+                            if (!isDragging) return;
+                            currentRotation = getAngle(e.clientX, e.clientY) - startAngle;
+                            gallery.style.setProperty('--rotation', currentRotation + 'deg');
+                        });
+
+                        window.addEventListener('mouseup', () => {
+                            isDragging = false;
+                        });
+
+                        // Touch support
+                        center.addEventListener('touchstart', (e) => {
+                            isDragging = true;
+                            const touch = e.touches[0];
+                            startAngle = getAngle(touch.clientX, touch.clientY) - currentRotation;
+                            e.preventDefault();
+                        });
+
+                        window.addEventListener('touchmove', (e) => {
+                            if (!isDragging) return;
+                            const touch = e.touches[0];
+                            currentRotation = getAngle(touch.clientX, touch.clientY) - startAngle;
+                            gallery.style.setProperty('--rotation', currentRotation + 'deg');
+                            e.preventDefault();
+                        });
+
+                        window.addEventListener('touchend', () => {
+                            isDragging = false;
+                        });
+                    </script>
+                </div>
+
+                <script>
+                    // Video modal functionality
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var videoModal = document.getElementById('videoModal2');
+                        var videoSrc = "https://www.youtube.com/embed/YOUR_VIDEO_ID";
+
+                        videoModal.addEventListener('show.bs.modal2', function () {
+                            document.getElementById('ppblVideo').setAttribute('src', videoSrc + '?autoplay=1');
+                        });
+
+                        videoModal.addEventListener('hide.bs.modal2', function () {
+                            document.getElementById('ppblVideo').setAttribute('src', '');
+                        });
+
+                        // Close when clicking outside video
+                        videoModal.addEventListener('click', function (e) {
+                            if (e.target === videoModal) {
+                                var modal = bootstrap.Modal.getInstance(videoModal);
+                                modal.hide();
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <style>
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-video-thumbnail {
+            width: 70px;
+            height: 70px;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .btn-video-thumbnail:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: transparent;
+        }
+
+        .btn-close-white {
+            filter: invert(1) grayscale(100%) brightness(200%);
+            opacity: 0.8;
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            z-index: 10;
+        }
+
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.9;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Features Section -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex flex-column align-items-start p-4 bg-light rounded-3 h-100 feature-card">
+                        <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3">
+                            <i class="fa-solid fa-chalkboard-user fa-lg"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-2 fw-semibold">Presentasi Kegiatan</h5>
+                            <p class="mb-0 text-muted">Mengajari siswa siswi dalam hidup bersih dan gotong royong
+                                bersama serta penanaman nilai-nilai positif lainnya.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex flex-column align-items-start p-4 bg-light rounded-3 h-100 feature-card">
+                        <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3">
+                            <i class="fa-solid fa-people-carry-box fa-lg"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-2 fw-semibold">Belajar Gotong Royong</h5>
+                            <p class="mb-0 text-muted">Mengajari siswa siswi bekerja sama dalam membangun tanaman dan
+                                memahami pentingnya kerja tim.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex flex-column align-items-start p-4 bg-light rounded-3 h-100 feature-card">
+                        <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3">
+                            <i class="fa-solid fa-broom fa-lg"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-2 fw-semibold">Belajar Kebersihan</h5>
+                            <p class="mb-0 text-muted">Menanamkan nilai hidup bersih melalui praktik langsung dan
+                                kesadaran lingkungan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .icon-wrapper {
+            background-color: #0d6efd !important;
+            color: white !important;
+            transform: rotate(15deg);
+        }
+
+        @media (max-width: 768px) {
+            .icon-wrapper {
+                width: 50px;
+                height: 50px;
+                padding: 0.75rem !important;
+            }
+        }
+    </style>
+
+    <!-- Features Slider Section -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-dark">Kelompok Yazri</h2>
+                <p class="text-muted fs-5">Mengembangkan karakter siswa melalui pendidikan hidup bersih, gotong royong,
+                    dan nilai-nilai positif</p>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="position-relative px-lg-5">
+                <!-- Slider -->
+                <div id="featuresSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-4 overflow-hidden shadow-lg">
+                        <!-- Slide 1 - Presentasi Kegiatan -->
+                        <div class="carousel-item active">
+                            <div class="row g-0 align-items-stretch">
+                                <div class="col-lg-6 p-4 p-md-5 bg-white d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div
+                                            class="d-flex flex-column align-items-start p-4 bg-light rounded-3 h-100 feature-card icon-wrapper">
+                                            <i class="fa-solid fa-chalkboard-user fa-lg"></i>
+                                        </div>
+                                        <h3 class="mb-0 text-dark">Presentasi Kegiatan</h3>
+                                    </div>
+                                    <p class="lead text-secondary mb-4">Metode interaktif untuk mengajarkan pentingnya
+                                        kebersihan dan kerjasama melalui presentasi visual yang menarik.</p>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Materi
+                                            disesuaikan dengan usia siswa</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>
+                                            Pendekatan belajar sambil bermain</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Evaluasi
+                                            perkembangan peserta</li>
+                                    </ul>
+                                    <div class="mt-auto d-flex flex-wrap gap-2">
+                                        <button class="btn btn-outline-primary btn-lg px-4 py-2 rounded-pill">
+                                            <i class="far fa-eye me-2"></i> Preview Materi
+                                        </button>
+                                        <button class="btn btn-primary btn-lg px-4 py-2 rounded-pill">
+                                            <i class="fas fa-download me-2"></i> Download Panduan
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block bg-primary bg-opacity-10">
+                                    <img src="images/1 (2).jpeg" class="d-block w-100 h-100 object-fit-cover"
+                                        alt="Siswa belajar kebersihan" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 - Gotong Royong -->
+                        <div class="carousel-item">
+                            <div class="row g-0 align-items-stretch">
+                                <div class="col-lg-6 p-4 p-md-5 bg-white d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div
+                                            class="d-flex flex-column align-items-start p-4 bg-light rounded-3 h-100 feature-card icon-wrapper">
+                                            <i class="fa-solid fa-people-carry-box fa-lg"></i>
+                                        </div>
+                                        <h3 class="mb-0 text-dark">Gotong Royong</h3>
+                                    </div>
+                                    <p class="lead text-secondary mb-4">Program praktik langsung untuk menanamkan nilai
+                                        kerjasama dan tanggung jawab melalui kegiatan kelompok.</p>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Kegiatan
+                                            penanaman tanaman bersama</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Proyek
+                                            kebersihan lingkungan</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Sistem
+                                            reward untuk tim terbaik</li>
+                                    </ul>
+                                    <div class="mt-auto d-flex flex-wrap gap-2">
+                                        <button class="btn btn-outline-primary btn-lg px-4 py-2 rounded-pill">
+                                            <i class="far fa-images me-2"></i> Galeri Kegiatan
+                                        </button>
+                                        <button class="btn btn-primary btn-lg px-4 py-2 rounded-pill">
+                                            <i class="fas fa-book me-2"></i> Modul Pembelajaran
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block bg-primary bg-opacity-10">
+                                    <img src="images/1 (7).jpeg" class="d-block w-100 h-100 object-fit-cover"
+                                        alt="Kegiatan gotong royong" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 - Kebersihan -->
+                        <div class="carousel-item">
+                            <div class="row g-0 align-items-stretch">
+                                <div class="col-lg-6 p-4 p-md-5 bg-white d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div
+                                            class="d-flex flex-column align-items-start p-4 bg-light rounded-3 h-100 feature-card icon-wrapper">
+                                            <i class="fa-solid fa-broom fa-lg"></i>
+                                        </div>
+                                        <h3 class="mb-0 text-dark">Pendidikan Kebersihan</h3>
+                                    </div>
+                                    <p class="lead text-secondary mb-4">Pelatihan praktis untuk membangun kebiasaan
+                                        hidup bersih dan sehat sejak dini.</p>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Teknik
+                                            menjaga kebersihan diri</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Manajemen
+                                            kebersihan lingkungan</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Kompetisi
+                                            kelas terbersih</li>
+                                    </ul>
+                                    <div class="mt-auto d-flex flex-wrap gap-2">
+                                        <button class="btn btn-outline-primary btn-lg px-4 py-2 rounded-pill">
+                                            <i class="fas fa-chart-line me-2"></i> Lihat Progress
+                                        </button>
+                                        <button class="btn btn-primary btn-lg px-4 py-2 rounded-pill">
+                                            <i class="fas fa-tools me-2"></i> Alat Pembelajaran
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-none d-lg-block bg-primary bg-opacity-10">
+                                    <img src="images/1 (10).jpeg" class="d-block w-100 h-100 object-fit-cover"
+                                        alt="Pendidikan kebersihan" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#featuresSlider"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark bg-opacity-10 rounded-circle p-3"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#featuresSlider"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark bg-opacity-10 rounded-circle p-3"
+                            aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                    <!-- Indicators -->
+                    <div class="carousel-indicators position-static mt-4 justify-content-center">
+                        <button type="button" data-bs-target="#featuresSlider" data-bs-slide-to="0"
+                            class="active bg-primary rounded-circle" style="width:12px; height:12px;"
+                            aria-current="true"></button>
+                        <button type="button" data-bs-target="#featuresSlider" data-bs-slide-to="1"
+                            class="bg-primary rounded-circle" style="width:12px; height:12px;"></button>
+                        <button type="button" data-bs-target="#featuresSlider" data-bs-slide-to="2"
+                            class="bg-primary rounded-circle" style="width:12px; height:12px;"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: auto;
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: -50px;
+        }
+
+        .carousel-control-next {
+            right: -50px;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            background-color: rgba(13, 110, 253, 0.8) !important;
+        }
+
+        @media (max-width: 992px) {
+            .carousel-control-prev {
+                left: -20px;
+            }
+
+            .carousel-control-next {
+                right: -20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                padding: 1.5rem !important;
+            }
+        }
+    </style>
+
+
+    <!-- Cake Categories -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                <h6 class="text-primary text-uppercase">Our Team Yazri</h6>
+                <h2 class="display-5 mb-4">Explore Our Team Yazri</h2>
+                <p class="mb-0">membantu siswa memahami pentingnya kebersihan lingkungan dan menjaga kebersihan diri</p>
+            </div>
+            <div class="row g-4">
+                <!-- Wedding Cake -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cake-card bg-white rounded-3 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 750px;">
+                            <img src="user/anjani.jpeg" class="cake-img img-fluid w-100 h-100 object-fit-cover"
+                                alt="Wedding Cake">
+                            <div class="flavor-tag bg-primary text-white px-3 py-1 rounded-pill">Anjani Dwiyana</div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="mb-3">Anjani Dwiyana</h4>
+                            <p class="text-muted mb-4 flex-grow-1">Membantu siswa memahami pentingnya kebersihan
+                                lingkungan dan menjaga kebersihan diri</p>
+                            <a href="https://wa.me/+6289515735930"
+                                class="btn btn-outline-primary rounded-pill align-self-start">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birthday Cake -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cake-card bg-white rounded-3 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 750px;">
+                            <img src="user/nisswa.jpeg" class="cake-img img-fluid w-100 h-100 object-fit-cover"
+                                alt="Birthday Cake">
+                            <div class="flavor-tag bg-primary text-white px-3 py-1 rounded-pill">Niswah Zian Ahlia</div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="mb-3">Niswah Zian Ahlia</h4>
+                            <p class="text-muted mb-4 flex-grow-1">Memimpin siswa memahami pentingnya kebersihan
+                                lingkungan dan menjaga kebersihan diri</p>
+                            <a href="https://wa.me/+628888478388"
+                                class="btn btn-outline-primary rounded-pill align-self-start">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Cake 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cake-card bg-white rounded-3 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 750px;">
+                            <img src="user/roy.jpeg" class="cake-img img-fluid w-100 h-100 object-fit-cover"
+                                alt="Custom Cake">
+                            <div class="flavor-tag bg-primary text-white px-3 py-1 rounded-pill">Dwi Bakti N</div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="mb-3">Dwi Bakti Nugroho</h4>
+                            <p class="text-muted mb-4 flex-grow-1">Membantu Dan Menyegarkan Mentaly Healty Pada Siswa
+                                dan siswi</p>
+                            <a href="https://wa.me/+6289652969323"
+                                class="btn btn-outline-primary rounded-pill align-self-start">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Cake 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cake-card bg-white rounded-3 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 750px;">
+                            <img src="user/sidqi.jpeg" class="cake-img img-fluid w-100 h-100 object-fit-cover"
+                                alt="Custom Cake">
+                            <div class="flavor-tag bg-primary text-white px-3 py-1 rounded-pill">Muhammad Ahlishidqi
+                                walwafa</div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="mb-3">Muhammad Ahlishidqi walwafa</h4>
+                            <p class="text-muted mb-4 flex-grow-1">Membantu Aagar Siswa Siswi Dapat Berani Dan Percaya
+                                Diri Dalam Melakukan Kebersihan</p>
+                            <a href="https://wa.me/+6285710969253"
+                                class="btn btn-outline-primary rounded-pill align-self-start">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Cake 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cake-card bg-white rounded-3 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 750px;">
+                            <img src="user/waan.jpeg" class="cake-img img-fluid w-100 h-100 object-fit-cover"
+                                alt="Custom Cake">
+                            <div class="flavor-tag bg-primary text-white px-3 py-1 rounded-pill">Sophan Bileam Julmarwan
+                                Tambunan</div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="mb-3">Sophan Bileam Julmarwan Tambunan</h4>
+                            <p class="text-muted mb-4 flex-grow-1">Mendidik Siswa Agar Dapat Semanget Dalam Kebersihan
+                            </p>
+                            <a href="https://wa.me/+6282312457031"
+                                class="btn btn-outline-primary rounded-pill align-self-start">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Cake 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cake-card bg-white rounded-3 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                        <div class="position-relative overflow-hidden" style="height: 750px;">
+                            <img src="user/yazri.jpeg" class="cake-img img-fluid w-100 h-100 object-fit-cover"
+                                alt="Custom Cake">
+                            <div class="flavor-tag bg-primary text-white px-3 py-1 rounded-pill">Muhamad Yazri</div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="mb-3">Muhamad Yazri</h4>
+                            <p class="text-muted mb-4 flex-grow-1">Membantu Siswa Siswi Dalam Melakukan Kegiatan Gotong
+                                Royong Dan Kerja Sama Team</p>
+                            <a href="https://wa.me/+6287810423116"
+                                class="btn btn-outline-primary rounded-pill align-self-start">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Gallery Section -->
+    <div class="container-fluid py-5" style="background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+                <h6 class="text-primary text-uppercase mb-3" style="letter-spacing: 3px;">Our Team Yazri</h6>
+                <h2 class="display-4 mb-4 fw-bold" style="color: #2c3e50;">Team Kegiatan PPBL</h2>
+                <p class="lead text-muted mb-0">Kegiatan PPBL dibuat oleh kami dengan dedikasi dan komitmen untuk terus
+                    memberikan yang terbaik.</p>
+            </div>
+
+            <div class="row g-4 gallery-container">
+                <!-- Gallery Item 1 -->
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (1).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (2).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (3).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (4).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (5).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (6).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (7).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (8).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (9).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 gallery-item">
+                    <div class="gallery-card bg-white rounded-4 overflow-hidden shadow-sm position-relative h-100">
+                        <div class="gallery-img-container" style="height: 280px; overflow: hidden;">
+                            <img src="images/1 (10).jpeg" class="img-fluid w-100 h-100 object-cover gallery-img"
+                                alt="Kegiatan PPBL" data-img="1 (1).jpeg"
+                                data-caption="Membantu siswa memahami pentingnya kebersihan lingkungan">
+                        </div>
+                        <div class="gallery-overlay d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-lg rounded-circle p-3 preview-btn shadow-sm">
+                                <i class="fas fa-expand fa-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h5 class="mb-2 fw-semibold">Kegiatan PPBL</h5>
+                            <div class="d-flex align-items-center">
+                                <small class="text-muted">kegiatan yang membantu masyarakat dalam kebersihan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 position-absolute top-0 end-0 z-index-1">
+                    <button type="button" class="btn-close btn-close-white bg-dark bg-opacity-50 rounded-circle p-2"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0 text-center">
+                    <div class="ratio ratio-16x9">
+                        <img id="modalImage" src="" class="img-fluid rounded-top-3" alt="Gallery Preview"
+                            style="object-fit: contain; background-color: #000;">
+                    </div>
+                    <div class="caption-container bg-dark text-white p-3 rounded-bottom-3">
+                        <p id="modalCaption" class="mb-0 fw-medium"></p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-between px-4 pb-4 pt-0">
+                    <button id="prevBtn" class="btn btn-outline-light rounded-circle p-3">
+                        <i class="fas fa-chevron-left fa-lg"></i>
+                    </button>
+                    <button id="downloadBtn" class="btn btn-light rounded-pill px-4 py-2 fw-medium shadow-sm">
+                        <i class="fas fa-download me-2"></i>Download Image
+                    </button>
+                    <button id="nextBtn" class="btn btn-outline-light rounded-circle p-3">
+                        <i class="fas fa-chevron-right fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .gallery-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+            border-color: rgba(13, 110, 253, 0.2);
+        }
+
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-img-container:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .preview-btn {
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .preview-btn {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.85 !important;
+        }
+
+        .caption-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .btn-close-white {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+
+        #downloadBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #prevBtn,
+        #nextBtn {
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+        }
+
+        #prevBtn:hover,
+        #nextBtn:hover {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            let currentIndex = 0;
+            const images = Array.from(galleryItems).map(item => ({
+                src: item.querySelector('img').src,
+                caption: item.querySelector('img').getAttribute('data-caption'),
+                alt: item.querySelector('img').alt
+            }));
+
+            // Open modal with clicked image
+            document.querySelectorAll('.preview-btn').forEach((btn, index) => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentIndex = index;
+                    updateModal();
+                    modal.show();
+                });
+            });
+
+            // Also allow clicking the card to open modal
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateModal();
+                    modal.show();
+                });
+            });
+
+            // Navigation
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateModal();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateModal();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!modal._element.classList.contains('show')) return;
+
+                if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateModal();
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateModal();
+                } else if (e.key === 'Escape') {
+                    modal.hide();
+                }
+            });
+
+            // Download functionality
+            downloadBtn.addEventListener('click', () => {
+                const link = document.createElement('a');
+                link.href = images[currentIndex].src;
+                link.download = `ppbl-team-${currentIndex + 1}.jpg`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Add temporary feedback
+                const originalText = downloadBtn.innerHTML;
+                downloadBtn.innerHTML = '<i class="fas fa-check me-2"></i>Downloaded!';
+                downloadBtn.classList.remove('btn-light');
+                downloadBtn.classList.add('btn-success');
+                setTimeout(() => {
+                    downloadBtn.innerHTML = originalText;
+                    downloadBtn.classList.remove('btn-success');
+                    downloadBtn.classList.add('btn-light');
+                }, 2000);
+            });
+
+            function updateModal() {
+                modalImage.src = images[currentIndex].src;
+                modalImage.alt = images[currentIndex].alt;
+                modalCaption.textContent = images[currentIndex].caption;
+            }
+
+            // Smooth loading for modal images
+            modalImage.onload = function () {
+                this.style.opacity = 1;
+            };
+
+            modalImage.style.transition = 'opacity 0.3s ease';
+            modalImage.style.opacity = 0;
+        });
+    </script>
+
+    <!-- CTA Section -->
+    <div class="container-fluid py-5 bg-dark text-white position-relative"
+        style="background: url('img/cta-bg.jpg') center center no-repeat; background-size: cover;">
+        <div class="bg-overlay"></div>
+        <div class="container py-5 position-relative z-index-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 mb-4">Ready to Order Your Perfect Cake?</h2>
+                    <p class="mb-5 lead">Contact us for a consultation and let's create something extraordinary
+                        together.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="tel:+6287810423116" class="btn btn-primary btn-lg rounded-pill px-4 py-3">Book Now consultation</a>
+                        <a href="tel:+6289652969323" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3">
+                            <i class="bi bi-telephone me-2"></i>Call Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark text-secondary pt-5">
+        <div class="container pt-5">
+            <div class="row g-5">
+            </div>
+        </div>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
